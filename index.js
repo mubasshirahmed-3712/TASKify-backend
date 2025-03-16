@@ -20,6 +20,7 @@ app.use(
     credentials: true,
     methods: "GET,POST,PUT,DELETE",
     allowedHeaders: ["Content-Type", "Authorization"], // Add other headers you want to allow here.
+    
   })
 );
 
