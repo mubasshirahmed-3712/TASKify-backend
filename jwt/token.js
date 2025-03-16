@@ -11,6 +11,8 @@ export const generateTokenAndSaveInCookies = async (userId, res) => {
     secure: process.env.NODE_ENV === "production", // `true` in production (HTTPS), `false` in dev
     sameSite: "None", // Allows cross-site cookies (IMPORTANT for frontend)
     path: "/", // Ensures the cookie is available across the site
+
+    maxAge: 10 * 24 * 60 * 60 * 1000, // ⬅ 10 days expiration
   });
 
   await User.findByIdAndUpdate(userId, { token });
