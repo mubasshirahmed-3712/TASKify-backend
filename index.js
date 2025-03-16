@@ -16,11 +16,10 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL,
-    credentials: true,
+    origin: process.env.FRONTEND_URL, // Frontend URL from .env
+    credentials: true, // ⬅ Allow sending cookies from frontend
     methods: "GET,POST,PUT,DELETE",
-    allowedHeaders: ["Content-Type", "Authorization"], // Add other headers you want to allow here.
-    
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 
