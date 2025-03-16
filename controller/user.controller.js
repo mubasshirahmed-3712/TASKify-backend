@@ -68,6 +68,9 @@ export const logout = (req, res) => {
   try {
     res.clearCookie("jwt", {
       path: "/",
+      httpOnly: true,
+      secure: true, // ❗ Required for HTTPS
+      sameSite: "None",
     });
     res.status(200).json({ message: "User logged out successfully" });
   } catch (error) {
